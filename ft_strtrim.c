@@ -47,6 +47,7 @@ char    *ft_strtrim(char const *s1, char const *set)
 /*
 int main(void) {
 	char line[15]="RRubRRenRRRR";
+	DANI EL MALAGUEÑO ARREPENTIDO
 	ft_strtrim(line,(char const *)'R');
 
 	return 0;
