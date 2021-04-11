@@ -15,41 +15,48 @@
 
 size_t ft_strlen(const char *str)
 {
-	size_t	i;
+	size_t i;
 
 	i = 0;
 	while (str[i] != '\0')
 		i++;
 	return (i);
 }
-char    *ft_strtrim(char const *s1, char const *set)
+
+char *ft_strtrim(char const *s1, char const *set)
 {
-	int i;
 	char *str;
+	int i;
+	int len;
 	int x;
-	
-	i = 1;
 	x = 0;
-	if(!s1)
-		return(0);
-	str = (char*)malloc(sizeof(char) * (ft_strlen((char *)s1)+ 1));
-	if(!set || !str)
-		return(0);
-	while (s1[++i] == (char)set)
-		i++;
-	while(s1[i])
+	i = 0;
+	len = ft_strlen(s1) - 1;
+	if (!s1 || !set)
+		return (0);
+	str = (char *)malloc(sizeof(char) * 20);
+	while (!s1[i])
 	{
-		str[x] = s1[i];
+		if (s1[i] != (char)set)
+			printf("Premio \n");
 		i++;
-		x++;
 	}
-	str[x] = '\0';
-	return((char *)str);
+	while (s1[len] == set)
+		len--;
+	i--;
+
+	printf("tamano malloc >>>%d\n", (len - i));
+	while (++i < (len - 1))
+		str[x] = 'a';
+	printf("valor i >>>>%d", i);
+	str[i] = '\0';
+	return ((char *)str);
 }
-    
-int main(void) {
-	char line[20]="RRubaaaaaaRRenRRRR";
-	printf("%s",ft_strtrim(line,(char const *)'R'));
+
+int main(void)
+{
+	char line[20] = "RRubaaaaaaRRenRRRR";
+	printf("----> %s\n", ft_strtrim(line, (char const *)'R'));
 
 	return 0;
 }
