@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-
+//#include <stdio.h>
+/*
 size_t ft_strlen(const char *str)
 {
 	size_t i;
@@ -21,7 +21,7 @@ size_t ft_strlen(const char *str)
 	while (str[i] != '\0')
 		i++;
 	return (i);
-}
+}*/
 
 char *ft_strtrim(char const *s1, char const *set)
 {
@@ -37,26 +37,26 @@ char *ft_strtrim(char const *s1, char const *set)
 	str = (char *)malloc(sizeof(char) * 20);
 	while (!s1[i])
 	{
-		if (s1[i] != (char)set)
-			printf("Premio \n");
+		/*if (s1[i] != (char)set)
+			printf("Premio \n");*/
 		i++;
 	}
-	while (s1[len] == set)
+	while (s1[len] == (char)set)
 		len--;
 	i--;
 
-	printf("tamano malloc >>>%d\n", (len - i));
+	//printf("tamano malloc >>>%d\n", (len - i));
 	while (++i < (len - 1))
-		str[x] = 'a';
-	printf("valor i >>>>%d", i);
-	str[i] = '\0';
+		str[x] = s1[i];
+	//printf("valor i >>>>%d", i);
+	str[x] = '\0';
 	return ((char *)str);
 }
-
+/*
 int main(void)
 {
 	char line[20] = "RRubaaaaaaRRenRRRR";
 	printf("----> %s\n", ft_strtrim(line, (char const *)'R'));
 
 	return 0;
-}
+}*/
