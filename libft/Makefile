@@ -6,7 +6,7 @@
 #    By: rbeltran <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/08 20:01:28 by rbeltran          #+#    #+#              #
-#    Updated: 2021/04/10 12:06:18 by rbeltran         ###   ########.fr        #
+#    Updated: 2021/04/15 13:23:05 by rbeltran         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,16 @@ SRCS = 	ft_memset.c		\
 		ft_substr.c		\
 		ft_strjoin.c 	\
 		ft_strtrim.c	\
+		ft_putchar_fd.c \
+		ft_putstr_fd.c 	\
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c  \
+		ft_split.c 		\
+		ft_lstnew.c 	\
+		ft_putstr.c		\
+		ft_putchar.c	\
+		ft_putnbr.c		\
+		ft_itoa.c		\
 
 OBJS = $(SRCS:.c=.o)
 

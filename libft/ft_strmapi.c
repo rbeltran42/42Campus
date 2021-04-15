@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbeltran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/06 20:45:34 by rbeltran          #+#    #+#             */
-/*   Updated: 2021/04/12 15:57:15 by rbeltran         ###   ########.fr       */
+/*   Created: 2021/04/13 18:16:48 by rbeltran          #+#    #+#             */
+/*   Updated: 2021/04/15 13:01:27 by rbeltran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (dest == 0 && src == 0)
-		return (0);
-	if (dest < src)
-		ft_memcpy(dest, src, n);
-	else
-		while (n--)
-			*(unsigned char *)(dest + n) = *(unsigned char *)(src + n);
+	char	*dest;
+	int		i;
+
+	if (!s || !f)
+		return (NULL);
+	if (!(dest = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1))))
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		dest[i] = f(i, s[i]);
+		++i;
+	}
+	dest[i] = '\0';
 	return (dest);
 }

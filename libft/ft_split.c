@@ -6,42 +6,39 @@
 /*   By: rbeltran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 15:55:06 by rbeltran          #+#    #+#             */
-/*   Updated: 2021/04/08 18:26:54 by rbeltran         ###   ########.fr       */
+/*   Updated: 2021/04/15 18:15:18 by rbeltran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include <string.h>
-char **ft_split(char const *s, char c)
+#include "libft.h"
+
+
+char	**ft_split(char const *s, char c)
 {
-    char **dest;
-    int i;
-}
+	char		**tab;
+	int			i;
+	int			x;
+	int			j;
 
-
-
-
-int main()
-{
-	char str[] = "strtok needs to be called several times to split a string";
-	int init_size = strlen(str);
-	char delim[] = " ";
-
-	char *ptr = strtok(str, delim);
-
-	while(ptr != NULL)
-	{
-		printf("'%s'\n", ptr);
-		ptr = strtok(NULL, delim);
+	i = -1;
+	j = 0;
+	if (!s)
+		return (NULL);
+	tab = ft_calloc(ft_strlen(s), sizeof(char *));
+	if (!tab)
+		return (NULL);
+	while (++i < (int)ft_strlen(s))
+	{	
+		if (s[i] != c && s[i] != '\0')
+		{
+			x = i;
+			while (s[i] != c && s[i] != '\0')
+				i++;
+			tab[j] = ft_substr(s, x, i - x);
+			if (s[i + 1] != '\0')
+				j++;
+		}
 	}
-
-	/* This loop will show that there are zeroes in the str after tokenizing */
-	for (int i = 0; i < init_size; i++)
-	{
-		printf("%d ", str[i]); /* Convert the character to integer, in this case
-							   the character's ASCII equivalent */
-	}
-	printf("\n");
-
-	return 0;
+	tab[j] = NULL;
+	return (tab);
 }
