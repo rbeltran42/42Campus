@@ -6,7 +6,7 @@
 /*   By: rbeltran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 19:57:11 by rbeltran          #+#    #+#             */
-/*   Updated: 2021/04/15 13:01:13 by rbeltran         ###   ########.fr       */
+/*   Updated: 2021/04/17 20:33:29 by rbeltran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,12 @@ char				*ft_itoa(int n);
 char 				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 t_list 				*ft_lstnew(void *content);
+void 				ft_lstadd_front(t_list **alst, t_list *new);
+void 				ft_lstadd_back(t_list **lst, t_list *new);
+int 				ft_lstsize(t_list *lst);
+t_list				*ft_lstlast(t_list *lst);
+void 				ft_lstdelone(t_list *lst, void (*del)(void *));
+void 				ft_lstiter(t_list *lst, void (*f)(void *));
+void 				ft_lstclear(t_list **lst, void (*del)(void *));
 
 #endif

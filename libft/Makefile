@@ -6,13 +6,16 @@
 #    By: rbeltran <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/08 20:01:28 by rbeltran          #+#    #+#              #
-#    Updated: 2021/04/15 13:23:05 by rbeltran         ###   ########.fr        #
+#    Updated: 2021/04/17 20:34:02 by rbeltran         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 FLAGS = -Wall -Werror -Wextra
+CC = gcc
+RM = rm -f
+AR = ar rcs
 
 SRCS = 	ft_memset.c		\
 		ft_atoi.c		\
@@ -46,29 +49,43 @@ SRCS = 	ft_memset.c		\
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c  \
 		ft_split.c 		\
-		ft_lstnew.c 	\
 		ft_putstr.c		\
 		ft_putchar.c	\
 		ft_putnbr.c		\
 		ft_itoa.c		\
+		ft_strmapi.c	
+
+SRCSB =	ft_lstnew.c		\
+		ft_lstadd_front.c \
+		ft_lstsize.c  \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstiter.c \
+		ft_lstclear.c
 
 OBJS = $(SRCS:.c=.o)
+
+OBJSB = $(SRCSB:.c=.o)
 
 HEADER = libft.h
 
 all: $(NAME)
 
-$(NAME):
-	gcc -c $(FLAGS) -I $(HEADER) $(SRCS)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+$(NAME):	$(SRCS)
+			$(CC) $(FLAGS) -I $(HEADER) -c $(SRCS)
+			$(AR) $(NAME) $(OBJS)
+	
+bonus: 		$(NAME)
+			$(CC) $(FLAGS) -I $(HEADER) -c $(SRCSB)
+			$(AR) $(NAME) $(OBJSB)
 
 clean:
-	rm -f $(OBJS)
+	$(RM) $(OBJS) $(OBJSB)
 
-fclean:
-	rm -f $(NAME)
+fclean: clean
+	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean
+.PHONY: all bonus clean fclean

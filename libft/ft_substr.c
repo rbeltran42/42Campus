@@ -6,11 +6,32 @@
 /*   By: rbeltran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 19:33:32 by rbeltran          #+#    #+#             */
-/*   Updated: 2021/04/12 17:14:31 by rbeltran         ###   ########.fr       */
+/*   Updated: 2021/04/17 16:54:25 by rbeltran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	size_malloc(char const *s, unsigned int start, size_t l)
+{
+	size_t	i;
+	int		sz;
+	size_t	x;
+
+	x = 0;
+	i = 0;
+	sz = 0;
+	while (s[i])
+	{
+		if (i >= start && x < l)
+		{
+			sz++;
+			x++;
+		}
+		i++;
+	}
+	return (sz);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t l)
 {
@@ -20,8 +41,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t l)
 
 	x = 0;
 	i = 0;
-	d = (char *)malloc(l + 1);
-	if (!s || !d)
+	if (!s)
+		return (NULL);
+	d = malloc(sizeof(char) * (size_malloc(s, start, l) + 1));
+	if (!d)
 		return (0);
 	while (s[i])
 	{
