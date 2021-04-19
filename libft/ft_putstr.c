@@ -6,7 +6,7 @@
 /*   By: rbeltran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 13:59:44 by rbeltran          #+#    #+#             */
-/*   Updated: 2021/04/15 21:14:20 by rbeltran         ###   ########.fr       */
+/*   Updated: 2021/04/19 15:33:38 by rbeltran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_putstr(char *str)
 		return ;
 	while (str[i] != '\0')
 	{
-		ft_putchar(str[i]);
+		ft_putchar_fd(str[i],1);
 		i++;
 	}
 }

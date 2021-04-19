@@ -6,7 +6,7 @@
 #    By: rbeltran <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/08 20:01:28 by rbeltran          #+#    #+#              #
-#    Updated: 2021/04/17 20:34:02 by rbeltran         ###   ########.fr        #
+#    Updated: 2021/04/19 15:32:13 by rbeltran         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,8 +50,6 @@ SRCS = 	ft_memset.c		\
 		ft_putnbr_fd.c  \
 		ft_split.c 		\
 		ft_putstr.c		\
-		ft_putchar.c	\
-		ft_putnbr.c		\
 		ft_itoa.c		\
 		ft_strmapi.c	
 
@@ -62,7 +60,8 @@ SRCSB =	ft_lstnew.c		\
 		ft_lstadd_back.c \
 		ft_lstdelone.c \
 		ft_lstiter.c \
-		ft_lstclear.c
+		ft_lstclear.c \
+		ft_lstmap.c 
 
 OBJS = $(SRCS:.c=.o)
 

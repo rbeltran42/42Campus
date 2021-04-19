@@ -6,7 +6,7 @@
 /*   By: rbeltran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 15:55:06 by rbeltran          #+#    #+#             */
-/*   Updated: 2021/04/17 17:02:23 by rbeltran         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:04:27 by rbeltran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	**ft_split(char const *s, char c)
 	j = 0;
 	if (!s)
 		return (NULL);
-	tab = malloc(sizeof(char *) * num_pieces(s, c) + 4);
+	tab = malloc(sizeof(char *) * (num_pieces(s, c) + 1));
 	if (!tab)
 		return (NULL);
 	while (++i < (int)ft_strlen(s))

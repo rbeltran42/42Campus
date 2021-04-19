@@ -6,13 +6,13 @@
 /*   By: rbeltran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 17:52:12 by rbeltran          #+#    #+#             */
-/*   Updated: 2021/04/17 18:29:12 by rbeltran         ###   ########.fr       */
+/*   Updated: 2021/04/19 13:43:26 by rbeltran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (del)
 		del(lst->content);
