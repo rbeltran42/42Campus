@@ -6,7 +6,7 @@
 /*   By: rbeltran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 13:10:35 by rbeltran          #+#    #+#             */
-/*   Updated: 2021/04/12 16:17:27 by rbeltran         ###   ########.fr       */
+/*   Updated: 2021/04/19 19:09:15 by rbeltran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
+	i = ft_strlen(dest);
 	j = 0;
-	while (dest[i])
-		i++;
 	if (size < i)
 	{
 		while (src[j])

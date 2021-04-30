@@ -6,13 +6,13 @@
 /*   By: rbeltran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 19:33:32 by rbeltran          #+#    #+#             */
-/*   Updated: 2021/04/17 16:54:25 by rbeltran         ###   ########.fr       */
+/*   Updated: 2021/04/19 15:46:07 by rbeltran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	size_malloc(char const *s, unsigned int start, size_t l)
+static int	size_malloc(char const *s, unsigned int start, size_t l)
 {
 	size_t	i;
 	int		sz;

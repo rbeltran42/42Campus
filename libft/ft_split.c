@@ -6,13 +6,13 @@
 /*   By: rbeltran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 15:55:06 by rbeltran          #+#    #+#             */
-/*   Updated: 2021/04/19 14:04:27 by rbeltran         ###   ########.fr       */
+/*   Updated: 2021/04/27 19:12:53 by rbeltran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	num_pieces(char const *s, char c)
+static size_t	num_pieces(char const *s, char c)
 {
 	int		i;
 	size_t	sz;

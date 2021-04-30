@@ -6,7 +6,7 @@
 #    By: rbeltran <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/08 20:01:28 by rbeltran          #+#    #+#              #
-#    Updated: 2021/04/19 15:32:13 by rbeltran         ###   ########.fr        #
+#    Updated: 2021/04/27 19:13:07 by rbeltran         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,6 @@ SRCS = 	ft_memset.c		\
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c  \
 		ft_split.c 		\
-		ft_putstr.c		\
 		ft_itoa.c		\
 		ft_strmapi.c	
 
@@ -71,12 +70,10 @@ HEADER = libft.h
 
 all: $(NAME)
 
-$(NAME):	$(SRCS)
-			$(CC) $(FLAGS) -I $(HEADER) -c $(SRCS)
+$(NAME):	$(OBJS)
 			$(AR) $(NAME) $(OBJS)
 	
-bonus: 		$(NAME)
-			$(CC) $(FLAGS) -I $(HEADER) -c $(SRCSB)
+bonus: 		$(OBJSB)
 			$(AR) $(NAME) $(OBJSB)
 
 clean:
@@ -87,4 +84,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all bonus clean fclean
+.PHONY: all bonus clean fclean re

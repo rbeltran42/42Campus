@@ -6,15 +6,13 @@
 /*   By: rbeltran <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/12 17:40:33 by rbeltran          #+#    #+#             */
-/*   Updated: 2021/04/19 15:27:05 by rbeltran         ###   ########.fr       */
+/*   Updated: 2021/04/19 16:06:26 by rbeltran         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 
-void	*wr_str(char *str, long un, int i)
+static void	*wr_str(char *str, long un, int i)
 {
 	while (un)
 	{
@@ -24,7 +22,7 @@ void	*wr_str(char *str, long un, int i)
 	return (str);
 }
 
-int	len_nu(long int n)
+static	int	len_nu(long int n)
 {	
 	int	len;
 
